@@ -1,0 +1,12 @@
+{
+  "dismissal_words": [
+    "thanks", "thank you", "goodbye", "bye", "hush", "quiet", "stop",
+    "sleep", "dismissed", "that's all", "enough", "later", "shush", "go away"
+  ],
+  "whisper_model": "medium",
+  "idle_chunk_duration_sec": 1.5,
+  "tts_rate": 175,
+  "tts_volume": 1.0,
+  "sample_rate": 16000,
+  "rms_threshold": 300.0
+}

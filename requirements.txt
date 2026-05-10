@@ -1,0 +1,29 @@
+# Jarvis dependencies — pinned to known-good versions.
+# Do not upgrade without testing. Supply chain incidents are real.
+
+# Audio capture (PortAudio/WASAPI via sounddevice)
+sounddevice==0.5.5
+
+# Numerical arrays — required by faster-whisper and audio processing
+numpy==2.4.4
+
+# Voice activity detection — energy-based (RMS), pure Python/numpy, no C compiler needed.
+# webrtcvad requires MSVC to build and has no pre-built wheel for Windows — dropped.
+# VAD logic lives in shared\SpeechDetector\python\SpeechDetector.py.
+
+# Local speech-to-text (CTranslate2 + Whisper weights)
+faster-whisper==1.2.1
+
+# Text-to-speech (Windows SAPI wrapper)
+pyttsx3==2.99
+
+# VS Code input injection (clipboard + keyboard simulation)
+pyperclip==1.11.0
+pyautogui==0.9.54
+
+# Test framework
+pytest==8.3.5
+
+# Speaker identification via voice embeddings — Phase 2 only
+# Install when starting Phase 2: pip install resemblyzer==0.1.4
+# resemblyzer==0.1.4

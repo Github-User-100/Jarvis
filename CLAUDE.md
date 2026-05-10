@@ -67,6 +67,24 @@ A feature or fix is not done until:
   - CURRENT_ISSUES.md updated
   - Plan moved to archive/plans/ if one existed
 
+## Shared Dependencies
+All reusable infrastructure is pulled from `C:\Temp\ClaudeStuff\shared\` — never copied locally.
+The glob bootstrap in `audio_server.py` and `tests\conftest.py` adds all shared classes to sys.path:
+`for _d in glob.glob(r'C:\Temp\ClaudeStuff\shared\*\python'): sys.path.insert(0, _d)`
+
+| Class | Location | Purpose |
+|-------|----------|---------|
+| `AppLogger` | `shared\AppLogger\python\` | Structured logger; `AppLogger.configure(app_name='Jarvis')` |
+| `AudioStream` | `shared\AudioStream\python\` | Continuous mic capture |
+| `SpeechDetector` | `shared\SpeechDetector\python\` | webrtcvad wrapper; speech onset/end detection |
+| `Transcriber` | `shared\Transcriber\python\` | faster-whisper wrapper; tiny + medium models |
+| `Speaker` | `shared\Speaker\python\` | pyttsx3 TTS with interrupt support |
+| `VSCodeInjector` | `shared\VSCodeInjector\python\` | Clipboard + pyautogui input injection |
+
+Jarvis-specific classes (not reusable) live in `src\`:
+- `src\EnrollmentConductor.py` — conversational voice enrollment state machine
+- `src\Jarvis.py` — main class; IDLE/ACTIVE loop and all Jarvis-specific logic
+
 ## Project-Specific Rules
 - This project is a local voice interface for Claude Code in VS Code, themed as "Jarvis" from Iron Man.
 - All STT and TTS must be local/free — no cloud APIs, no API keys required.
