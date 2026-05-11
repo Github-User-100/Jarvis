@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 from AppLogger import AppLogger
 from Jarvis import Jarvis
 
-AppLogger.configure(app_name='Jarvis', level='INFO', log_file=r'C:\Temp\ClaudeStuff\Jarvis\jarvis.log')
+AppLogger.configure(app_name='Jarvis', level='INFO', log_file=r'C:\Temp\ClaudeStuff\Jarvis\jarvis.log', console_level='WARN')
 
 if __name__ == '__main__':
     Jarvis().run()

@@ -3,10 +3,21 @@
     "thanks", "thank you", "goodbye", "bye", "hush", "quiet", "stop",
     "sleep", "dismissed", "that's all", "enough", "later", "shush", "go away"
   ],
-  "whisper_model": "medium",
-  "idle_chunk_duration_sec": 1.5,
-  "tts_rate": 175,
+  "whisper_model": "small",
+  "tts_rate": 1,
   "tts_volume": 1.0,
   "sample_rate": 16000,
-  "rms_threshold": 300.0
+  "rms_threshold": 300.0,
+  "kid_pitch_threshold": 255.0,
+  "sentence_pause_ms": 400,
+  "match_threshold": 0.75,
+  "max_tts_chars": 500,
+  "response_timeout_seconds": 120,
+  "response_file": "C:\\Temp\\ClaudeStuff\\Jarvis\\jarvis_response.tmp",
+  "response_instruction": "After responding, write your complete response to C:\\Temp\\ClaudeStuff\\Jarvis\\jarvis_response.tmp then write a line containing only ---END---. Overwrite the file completely each time.",
+  "adult_persona_prefix": "[Voice mode: Your response will be read aloud. Be concise and conversational — avoid bullet points, markdown, and long lists unless explicitly asked.]",
+  "kid_persona_prefix": "[Voice mode: Your response will be read aloud to a child. Answer in 2-3 short sentences using simple, fun, age-appropriate words.]",
+  "named_adult_persona_template": "[Voice mode: You are speaking with {name}. Your response will be read aloud. Be concise and conversational — avoid bullet points, markdown, and long lists unless explicitly asked.]",
+  "named_kid_persona_template": "[Voice mode: You are speaking with {name}, age {age}. Answer in 2-3 short sentences using simple, fun, age-appropriate words.]",
+  "name_pronunciations": {}
 }

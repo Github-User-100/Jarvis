@@ -14,8 +14,8 @@ numpy==2.4.4
 # Local speech-to-text (CTranslate2 + Whisper weights)
 faster-whisper==1.2.1
 
-# Text-to-speech (Windows SAPI wrapper)
-pyttsx3==2.99
+# Text-to-speech (Windows SAPI via win32com — direct, no pyttsx3 wrapper)
+pywin32==311
 
 # VS Code input injection (clipboard + keyboard simulation)
 pyperclip==1.11.0
@@ -24,6 +24,12 @@ pyautogui==0.9.54
 # Test framework
 pytest==8.3.5
 
-# Speaker identification via voice embeddings — Phase 2 only
-# Install when starting Phase 2: pip install resemblyzer==0.1.4
-# resemblyzer==0.1.4
+# Pitch extraction for Phase 2 adult/kid detection
+librosa==0.10.2
+
+# Speaker identification via MFCC embeddings (Phase 3)
+# Uses librosa (already listed above) — no additional dependency needed.
+# resemblyzer was evaluated but requires PyTorch (~170MB); MFCC via librosa
+# is accurate enough for a small known-speaker set (family of 4-6).
+# webrtcvad-wheels is installed as a side-effect of resemblyzer evaluation:
+webrtcvad-wheels==2.0.14
