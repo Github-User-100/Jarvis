@@ -31,12 +31,14 @@ A local voice interface for [Claude Code](https://claude.ai/code) in VS Code, th
 
 ```bash
 # Clone and create virtualenv
-git clone <repo>
+git clone https://github.com/Github-User-100/Jarvis.git
 cd Jarvis
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
+
+All shared library dependencies (`AppLogger`, `AudioStream`, `SpeechDetector`, `Transcriber`, `Speaker`, `VSCodeInjector`) are included in the `shared/` folder — no separate install needed.
 
 On first run, faster-whisper downloads Whisper model weights from Hugging Face (~150MB for tiny, ~500MB for small). They are cached locally after the first download.
 
